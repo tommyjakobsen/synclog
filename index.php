@@ -1,5 +1,5 @@
 <?php
-$logDir = './logs';  // Change this to your logs directory
+$logDir = './log';  // Change this to your logs directory
 
 if ($handle = opendir($logDir)) {
     echo "<h1>Log Files</h1>";
