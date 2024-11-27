@@ -6,9 +6,55 @@ if (isset($_GET['file'])) {
     $filePath = "$logDir/$file";
 
     if (file_exists($filePath) && substr($file, -4) == '.log') {
+        echo "<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Log Viewer</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+    }
+    h1 {
+        color: #4CAF50;
+    }
+    input#search {
+        width: 100%;
+        padding: 8px;
+        margin: 10px 0 20px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>";
+
         echo "<h1>Viewing Log File: $file</h1>";
         echo '<input type="text" id="search" placeholder="Search...">';
-        echo "<table id='logTable' border='1'>
+        echo "<table id='logTable'>
                 <thead>
                     <tr>
                         <th>Timestamp</th>
@@ -32,6 +78,7 @@ if (isset($_GET['file'])) {
         }
 
         echo "</tbody></table>";
+        echo "</body></html>";
     } else {
         echo "Invalid log file.";
     }
