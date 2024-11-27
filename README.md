@@ -1,1 +1,3 @@
-# Parsing Synch logfiles
+# Simple parser for logfiles
+
+parse logfiles in a folder
